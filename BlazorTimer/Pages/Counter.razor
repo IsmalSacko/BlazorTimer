@@ -5,11 +5,15 @@
 
     <div class="text-center">
         <h1>Counter</h1>
-@*Ici, on affiche notre timer qui se décrémente chaque seconde d'un nombre
+@*
+    Ici, on affiche notre timer qui se décrémente chaque seconde d'un nombre
 *@
         <h3>Il vous reste  @Time  secondes</h3>
-    @*Cette instruction conditionnelle vérifie si le timer stritement inférieur à 1
-        et si tel est le, l'utilisateur set averti par une alerte en dessus du timer *@
+    @*
+        Cette instruction conditionnelle vérifie si le timer stritement inférieur à 1
+        et si tel est le, l'utilisateur set averti par une alerte en dessus du timer
+    *@
+
         @if (@Time < 1)
         {
             <div class="alert alert-info">Fin du programme !!</div>
@@ -19,7 +23,10 @@
 
 @code {
         [Parameter]
-        @*On définit le type et valeur de notre variable Time en seconde*@
+        @*
+            On définit le type et valeur de notre variable Time en seconde
+        *@
+
         public int Time { get; set; } = 20; //en seconde
 
         public async void StartTimerAsync() {
