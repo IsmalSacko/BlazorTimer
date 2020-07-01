@@ -1,0 +1,27 @@
+﻿@page "/"
+    <p>
+        Bienvenue sur la d'accueil de notre BlazorTimer. Le but de cette application était réaliser un timer
+        qui permet de : <br/>
+        -Réaliser une page blazor avec un timer qui permet de décrémenter tous les x seconds un nombre;<br />
+        -Permettre de récupérer cette valeur d’une page à une autre du site.
+    </p>
+    @*Injecgtioon de NavigationManager pour définir la route vers
+        on souheterait nous rendre suite au clique
+    *@
+
+    @inject NavigationManager NavigationManager
+    @*Le bouton sur lequel on clique tester notre timer*@
+    <p class="text-center py-5">
+        Cliquez ici pour :
+        <button class="btn btn-success" @onclick="Navigate">Tester le timer</button>
+    </p>
+    @*CEtte méthode nous permets de point sur un URL spécifique grâce NavigationManager
+        Elle retour rien et execute juste une instruction définifie
+    *@
+    @code {
+        public void Navigate()
+        {
+            NavigationManager.NavigateTo("timer");
+        }
+    }
+
